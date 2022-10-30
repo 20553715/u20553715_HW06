@@ -1,0 +1,152 @@
+﻿@model IPagedList<Homework06.Models.product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using PagedList.Mvc;
+@using PagedList;
+
+
+<h2>Products</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+    @using (Html.BeginForm("Index", "products", FormMethod.Get))
+    {
+        <input type="text" name="search" placeholder="Enter Product Name" />
+
+        <input type="submit" value="Search" />
+    }
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Create</button><br /><br />
+
+</p>
+
+@*<div class="modal fade">
+    @Html.ActionLink("Create New", "Create", new { @class = "btn btn-primary btn-sm" })
+</div>
+<div class="modal fade" id="productModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                here are going your controls etc
+            </div>
+        </div>
+    </div>
+</div>*@
+
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Year
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Brand
+        </th>
+        <th>
+            Category
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.product_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.model_year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.list_price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.brand.brand_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.category.category_name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.product_id }, new { @class = "btn btn-primary btn-sm" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.product_id }, new { @class = "btn btn-info btn-sm" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.product_id }, new { @class = "btn btn-danger btn-sm" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+
+<div class="pagination">
+    <table width="100%" align="center">
+        <tr>
+            <td>
+                <p style="float: right">
+                    <strong>
+                        @Html.PagedListPager(Model, i => Url.Action("Index", "products", new { i, search = Request.QueryString["Search"] }))
+                    </strong>
+                    &nbsp
+                </p>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title" id="myModalLabel">Add Employee</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="Id">ID</label>
+                        <input type="text" class="form-control" id="ID" placeholder="Id" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Name">Name</label>
+                        <input type="text" class="form-control" id="Name" placeholder="Name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Year">Year</label>
+                        <input type="text" class="form-control" id="Year" placeholder="Year" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Price">Price</label>
+                        <input type="number" class="form-control" id="Price" placeholder="Price" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Brand">Brand</label>
+                        <input type="text" class="form-control" id="Brand" placeholder="Brand" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Category">Category</label>
+                        <input type="text" class="form-control" id="Category" placeholder="Category" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Add</button>
+                <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src=" ~ /Scripts/common.js"></script>
