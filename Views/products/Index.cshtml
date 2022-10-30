@@ -22,6 +22,12 @@
 
 </p>
 
+@Html.ActionLink("Create New", "Create")
+</p>
+<p>
+    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#productModal">Create</a>
+</p>
+
 <div class="modal fade" id="productModal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -41,6 +47,25 @@
         </div>
     </div>
 </div>
+@*<div class="modal fade" id="productModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">New Product</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="createForm">
+                        <label>Product Name</label>
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>*@
 
 <table class="table">
     <tr>
@@ -113,47 +138,47 @@
 
 
 @*<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4 class="modal-title" id="myModalLabel">Add Employee</h4>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="Id">ID</label>
-                        <input type="text" class="form-control" id="ID" placeholder="Id" disabled="disabled" />
-                    </div>
-                    <div class="form-group">
-                        <label for="Name">Name</label>
-                        <input type="text" class="form-control" id="Name" placeholder="Name" />
-                    </div>
-                    <div class="form-group">
-                        <label for="Year">Year</label>
-                        <input type="text" class="form-control" id="Year" placeholder="Year" />
-                    </div>
-                    <div class="form-group">
-                        <label for="Price">Price</label>
-                        <input type="number" class="form-control" id="Price" placeholder="Price" />
-                    </div>
-                    <div class="form-group">
-                        <label for="Brand">Brand</label>
-                        <input type="text" class="form-control" id="Brand" placeholder="Brand" />
-                    </div>
-                    <div class="form-group">
-                        <label for="Category">Category</label>
-                        <input type="text" class="form-control" id="Category" placeholder="Category" />
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Add</button>
-                <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4 class="modal-title" id="myModalLabel">Add Employee</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="Id">ID</label>
+                            <input type="text" class="form-control" id="ID" placeholder="Id" disabled="disabled" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Name">Name</label>
+                            <input type="text" class="form-control" id="Name" placeholder="Name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Year">Year</label>
+                            <input type="text" class="form-control" id="Year" placeholder="Year" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Price">Price</label>
+                            <input type="number" class="form-control" id="Price" placeholder="Price" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Brand">Brand</label>
+                            <input type="text" class="form-control" id="Brand" placeholder="Brand" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Category">Category</label>
+                            <input type="text" class="form-control" id="Category" placeholder="Category" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Add</button>
+                    <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<script src=" ~ /Scripts/common.js"></script>*@
+    <script src=" ~ /Scripts/common.js"></script>*@
