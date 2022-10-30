@@ -18,22 +18,29 @@
 
         <input type="submit" value="Search" />
     }
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Create</button><br /><br />
+    @*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Create</button><br /><br />*@
 
 </p>
 
-@*<div class="modal fade">
-    @Html.ActionLink("Create New", "Create", new { @class = "btn btn-primary btn-sm" })
-</div>
-<div class="modal fade" id="productModal" role="dialog">
+<div class="modal fade" id="productModal">
     <div class="modal-dialog">
         <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">New Product</h2>
+            </div>
             <div class="modal-body">
-                here are going your controls etc
+                <form id="createForm">
+                    <label>Product Name</label>
+
+                </form>
+
+            </div>
+            <div class="modal-footer">
+
             </div>
         </div>
     </div>
-</div>*@
+</div>
 
 <table class="table">
     <tr>
@@ -105,7 +112,7 @@
 
 
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+@*<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -149,4 +156,4 @@
     </div>
 </div>
 
-<script src=" ~ /Scripts/common.js"></script>
+<script src=" ~ /Scripts/common.js"></script>*@
